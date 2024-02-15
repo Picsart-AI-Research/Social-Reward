@@ -1,6 +1,21 @@
 **README**
 
-This repository contains code for fine-tuning and validating a Contrastive Learning of Visual Representations (CLIP) model for a specific training task involving paired data consisting of text prompts and image pairs. The primary goal is to train a model for predicting social reward, specifically identifying which of two images is remixable. The code utilizes PyTorch and the CLIP library for training and validation.
+ **Social Reward: Evaluating and Enhancing Generative AI through Million-User Feedback from an Online Creative Community**
+
+Welcome to the repository of Social Reward – a groundbreaking framework for evaluating the community appeal of AI-generated visual art. In the age of collaborative content creation, users seek validation and motivation through social recognition. Our approach taps into implicit feedback from social network users engaged in creative editing on Picsart, resulting in the first million-user-scale dataset, "Picsart Image-Social."
+Repository contains fine-tuning and validating scripts of a Contrastive Learning of Visual Representations (CLIP) model for predicting social reward, utilizing PyTorch and the CLIP libraries.
+![alt text](assets/comparison.png)
+
+### Setup
+
+   **Setup environment for running train and validation**
+   ```bash
+   $ git clone https://github.com/Picsart-AI-Research/Social-Reward
+   $ cd Social-Reward
+   $ python -m venv venv
+   $ pip install pip --upgrade
+   $ pip install -r requirements.txt
+   ```
 
 ### Files and Structure
 
@@ -67,6 +82,8 @@ This repository contains code for fine-tuning and validating a Contrastive Learn
     python validate.py 'validation_data.parquet' --checkout_path 'classifier_checkpoint.pth' --device 'cuda' --batch_size 1024 --num_workers 9
     ```
 
-**Note:**
-- Ensure all required dependencies (PyTorch, CLIP, tqdm, etc.) are installed.
-- Adjust file paths and parameters according to your dataset and preferences.
+### BibTeX
+
+If you use our work in your research, please cite our publication:
+
+  

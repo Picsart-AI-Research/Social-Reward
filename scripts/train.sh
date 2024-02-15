@@ -1,6 +1,6 @@
 
 accelerate launch\
- train_pair_pos_neg.py\
+ ../src/train_pair_pos_neg.py\
  --training_file training_file.parquet\
  --training_mode visual_upper_layers_textual_upper_layers\
  --batch_size 32\
