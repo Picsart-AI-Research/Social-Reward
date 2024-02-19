@@ -1,6 +1,7 @@
 **README**
 
- **Social Reward: Evaluating and Enhancing Generative AI through Million-User Feedback from an Online Creative Community**
+ # Social Reward: Evaluating and Enhancing Generative AI through Million-User Feedback from an Online Creative Community**
+[![arXiv](https://img.shields.io/badge/arXiv-2208.01618-b31b1b.svg)](https://arxiv.org/abs/2402.09872)
 
 Welcome to the repository of Social Reward – a groundbreaking framework for evaluating the community appeal of AI-generated visual art. In the age of collaborative content creation, users seek validation and motivation through social recognition. Our approach taps into implicit feedback from social network users engaged in creative editing on Picsart, resulting in the first million-user-scale dataset, "Picsart Image-Social."
 Repository contains fine-tuning and validating scripts of a Contrastive Learning of Visual Representations (CLIP) model for predicting social reward, utilizing PyTorch and the CLIP libraries.
