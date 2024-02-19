@@ -1,10 +1,16 @@
 **README**
 
- # Social Reward: Evaluating and Enhancing Generative AI through Million-User Feedback from an Online Creative Community**
+ # Social Reward: Evaluating and Enhancing Generative AI through Million-User Feedback from an Online Creative Community
 [![arXiv](https://img.shields.io/badge/arXiv-2208.01618-b31b1b.svg)](https://arxiv.org/abs/2402.09872)
 
-Welcome to the repository of Social Reward – a groundbreaking framework for evaluating the community appeal of AI-generated visual art. In the age of collaborative content creation, users seek validation and motivation through social recognition. Our approach taps into implicit feedback from social network users engaged in creative editing on Picsart, resulting in the first million-user-scale dataset, "Picsart Image-Social."
-Repository contains fine-tuning and validating scripts of a Contrastive Learning of Visual Representations (CLIP) model for predicting social reward, utilizing PyTorch and the CLIP libraries.
+>**Social Reward: Evaluating and Enhancing Generative AI through Million-User Feedback from an Online Creative Community**<br>
+> Arman Isajanyan<sup>1</sup>, Artur Shatveryan<sup>1</sup>, David Kocharyan<sup>1</sup>, Zhangyang Wang<sup>1,2</sup>, Humphrey Shi<sup>1,3</sup> <br>
+<sup>1</sup>Picsart AI Research (PAIR), <sup>2</sup>UT Austin, <sup>3</sup>Georgia Tech
+
+>**Abstract**: <br>
+> Social reward as a form of community recognition provides a strong source of motivation for users of online platforms to engage and contribute with content. The recent progress of 
+  text-conditioned image synthesis has ushered in a collaborative era where AI empowers users to craft original visual artworks seeking community validation. Nevertheless, assessing these models in the context of collective community preference introduces distinct challenges. Existing evaluation methods predominantly center on limited size user studies guided by image quality and prompt alignment. This work pioneers a paradigm shift, unveiling Social Reward - an innovative reward modeling framework that leverages implicit feedback from social network users engaged in creative editing of generated images. We embark on an extensive journey of dataset curation and refinement, drawing from Picsart: an online visual creation and editing platform, yielding a first million-user-scale dataset of implicit human preferences for user-generated visual art named Picsart Image-Social. Our analysis exposes the shortcomings of current metrics in modeling community creative preference of text-to-image models' outputs, compelling us to introduce a novel predictive model explicitly tailored to address these limitations. Rigorous quantitative experiments and user study show that our Social Reward model aligns better with social popularity than existing metrics. Furthermore, we utilize Social Reward to fine-tune text-to-image models, yielding images that are more favored by not only Social Reward, but also other established metrics. These findings highlight the relevance and effectiveness of Social Reward in assessing community appreciation for AI-generated artworks, establishing a closer alignment with users' creative goals: creating popular visual art.
+
 ![alt text](assets/comparison.png)
 
 ### Setup
@@ -61,8 +67,8 @@ Repository contains fine-tuning and validating scripts of a Contrastive Learning
     | ...        | ...                                  | ...                                  |
 
     - `prompt`: Text prompt corresponding to each pair of positive and negative images.
-    - `pos_path`: Path to the image considered remixable.
-    - `neg_path`: Path to the image considered non-remixable.
+    - `pos_path`: Path to the positive image.
+    - `neg_path`: Path to the negative image.
 
 2. **Training:**
     - Fine-tune the CLIP model using the training script.
@@ -86,5 +92,14 @@ Repository contains fine-tuning and validating scripts of a Contrastive Learning
 ### BibTeX
 
 If you use our work in your research, please cite our publication:
-
+```
+@misc{isajanyan2024social,
+      title={Social Reward: Evaluating and Enhancing Generative AI through Million-User Feedback from an Online Creative Community}, 
+      author={Arman Isajanyan and Artur Shatveryan and David Kocharyan and Zhangyang Wang and Humphrey Shi},
+      year={2024},
+      eprint={2402.09872},
+      archivePrefix={arXiv},
+      primaryClass={cs.CV}
+}
+```
   
