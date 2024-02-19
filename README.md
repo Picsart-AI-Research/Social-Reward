@@ -20,6 +20,7 @@
    $ git clone https://github.com/Picsart-AI-Research/Social-Reward
    $ cd Social-Reward
    $ python -m venv venv
+   $ source venv/bin/activate
    $ pip install pip --upgrade
    $ pip install -r requirements.txt
    ```
@@ -71,17 +72,48 @@
     - `neg_path`: Path to the negative image.
 
 2. **Training:**
-    - Fine-tune the CLIP model using the training script.
+
+    The `finetune_model` script provides various training options through command-line arguments for fine-tuning the CLIP model. Here's a description of each training option.
+
+    #### Required Arguments:
+    
+    - `--training_file`: Path to the training file (Parquet file) containing the training data.
+    
+    - `--training_mode`: Specifies the training mode, which determines which parts of the model are trained. Available options are:
+      - `"all"`: Fine-tunes the entire CLIP model.
+      - `"visual"`: Fine-tunes only the visual (image) features of the model.
+      - `"visual_upper_layers"`: Fine-tunes the upper layers of the visual transformer.
+      - `"visual_upper_layers_textual_upper_layers"`: Fine-tunes both the upper layers of the visual transformer and upper layers of the textual transformer.
+      - `"visual_upper_layers_textual_upper_layers_deeper"`: Fine-tunes deeper layers of both the visual and textual transformers.
+      - `"visual_last_layer"`: Fine-tunes only the last layer of the visual transformer.
+    
+    - `--batch_size`: Batch size for training.
+    
+    - `--n_epochs`: Number of training epochs.
+    
+    - `--save_folder`: Path to the folder where fine-tuned model checkpoints will be saved.
+    
+    #### Optional Arguments:
+    
+    - `--loss_name`: Name of the loss function used for training. Default is `"triplet"`.
+    
+    - `--checkout_path`: Path to a pre-trained model checkpoint for fine-tuning. Default is `None`, indicating training from CLIP weights.
+    
+    - `--learning_rate`: Learning rate for optimization. Default is `0.00003`.
+    
+    #### Example Usage:
+    These are hyperparatemers that are used in the paper.
     ```bash
-   accelerate launch\
-    train_pair_pos_neg.py\
-    --training_file training_file.parquet\
-    --training_mode visual_upper_layers_textual_upper_layers\
-    --batch_size 32\
-    --n_epochs 10\
-    --save_folder ./clip_model\
-    --loss_name triplet
+    accelerate launch\
+     train_pair_pos_neg.py\
+     --training_file training_file.parquet\
+     --training_mode visual_upper_layers_textual_upper_layers\
+     --batch_size 32\
+     --n_epochs 10\
+     --save_folder ./clip_model\
+     --loss_name triplet
     ```
+
 
 3. **Validation:**
     - Validate the fine-tuned model using the validation script.

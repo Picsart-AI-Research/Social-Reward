@@ -1,3 +1,93 @@
-# TODO: add proper gitignore
+# Byte-compiled / optimized / DLL files
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
 
-.idea
+# Local configuration file (uncomment if needed)
+# myconfig.ini
+
+# Compiled Python files
+*.pyc
+*.pyo
+
+# Virtual environment
+venv/
+env/
+__env__/
+.env/
+
+# IDE-specific files
+.vscode/
+.idea/
+
+# Dependency folders
+lib/
+lib64/
+bin/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+parts/
+sdist/
+var/
+wheels/
+share/python-wheels/
+*.egg-info/
+.installed.cfg/
+*.egg
+MANIFEST
+
+# Distribution / packaging
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+*.egg-info/
+.installed.cfg/
+*.egg
+
+# Docker
+Dockerfile
+docker-compose.yml
+.dockerignore
+
+# Jupyter Notebooks
+.ipynb_checkpoints
+
+# pyenv
+.python-version
+
+# pipenv
+Pipfile
+Pipfile.lock
+
+# Spyder project settings
+.spyderproject
+.spyproject
+
+# Rope project settings
+.ropeproject
+
+# Database
+*.sqlite3
+*.db
+
+# Logs and databases
+*.log
+*.sql
+
+# Environment variables
+.env
